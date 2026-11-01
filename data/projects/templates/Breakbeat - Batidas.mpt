@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<!DOCTYPE lmms-project>
+<lmms-project type="song" version="1.0" creator="LMMS" creatorversion="1.2.0">
+  <head timesig_denominator="4" bpm="130" masterpitch="0" mastervol="100" timesig_numerator="4"/>
+  <song>
+    <trackcontainer visible="1" width="600" height="300" type="song" x="6" y="5" maximized="0" minimized="0">
+      <track type="1" muted="0" name="Breakbeat 1 - Funky Breaks" solo="0">
+        <bbtrack>
+          <trackcontainer visible="1" width="580" height="300" type="bbtrackcontainer" x="610" y="5" maximized="0" minimized="0">
+              <track type="0" muted="0" name="Bumbo" solo="0">
+                <instrumenttrack pitch="0" vol="100" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/kick_hiphop01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="0" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="192" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="384" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="576" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="768" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="36" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="96" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="960" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="1152" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="36" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo" pos="1344" len="192">
+                  <note len="-192" key="57" vol="127" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                </pattern>
+              </track>
+              <track type="0" muted="0" name="Bumbo 2" solo="0">
+                <instrumenttrack pitch="0" vol="90" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/kick04.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="192" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="384" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="768" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="960" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="1152" len="192">
+                  <note len="-192" key="57" vol="55" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Bumbo 2" pos="1344" len="192"/>
+              </track>
+              <track type="0" muted="0" name="Caixa" solo="0">
+                <instrumenttrack pitch="0" vol="95" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/snare_hiphop01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="0" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="192" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="384" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="576" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="108" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="768" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="960" len="192">
+                  <note len="-192" key="57" vol="127" pos="96" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="1152" len="192">
+                  <note len="-192" key="57" vol="127" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="127" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa" pos="1344" len="192">
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="156" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="180" pan="0"/>
+                </pattern>
+              </track>
+              <track type="0" muted="0" name="Caixa fantasma" solo="0">
+                <instrumenttrack pitch="0" vol="70" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/snare_muffled01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="192" len="192">
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="108" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="384" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="768" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="960" len="192">
+                  <note len="-192" key="57" vol="55" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="1152" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Caixa fantasma" pos="1344" len="192"/>
+              </track>
+              <track type="0" muted="0" name="Chimbal fechado" solo="0">
+                <instrumenttrack pitch="0" vol="65" mixch="0" pan="10" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/hihat_closed01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="0" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="192" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="12" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="36" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="60" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="108" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="132" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="156" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="384" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="576" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="12" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="36" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="60" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="108" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="132" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="156" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="768" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="960" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="1152" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="12" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="36" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="60" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="84" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="96" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="108" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="120" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="132" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="156" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                  <note len="-192" key="57" vol="55" pos="180" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal fechado" pos="1344" len="192"/>
+              </track>
+              <track type="0" muted="0" name="Chimbal aberto" solo="0">
+                <instrumenttrack pitch="0" vol="70" mixch="0" pan="-10" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/hihat_opened01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="192" len="192">
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="384" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="768" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="960" len="192">
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="168" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="1152" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Chimbal aberto" pos="1344" len="192">
+                  <note len="-192" key="57" vol="100" pos="24" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="72" pan="0"/>
+                </pattern>
+              </track>
+              <track type="0" muted="0" name="Ride" solo="0">
+                <instrumenttrack pitch="0" vol="60" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/ride02.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="192" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="384" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="768" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="960" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="1152" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Ride" pos="1344" len="192"/>
+              </track>
+              <track type="0" muted="0" name="Clap" solo="0">
+                <instrumenttrack pitch="0" vol="85" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/clap03.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="192" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="384" len="192">
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="768" len="192">
+                  <note len="-192" key="57" vol="100" pos="48" pan="0"/>
+                  <note len="-192" key="57" vol="100" pos="144" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="960" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="1152" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Clap" pos="1344" len="192"/>
+              </track>
+              <track type="0" muted="0" name="Prato (crash)" solo="0">
+                <instrumenttrack pitch="0" vol="65" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+                  <instrument name="audiofileprocessor">
+                    <audiofileprocessor interp="1" reversed="0" looped="0" sframe="0" lframe="0" eframe="1" src="drums/crash01.ogg" amp="100" stutter="0"/>
+                  </instrument>
+                  <eldata fwet="0" ftype="0" fres="0.5" fcut="14000">
+                    <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                    <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+                  </eldata>
+                  <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+                  <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+                  <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+                  <fxchain numofeffects="0" enabled="0"/>
+                </instrumenttrack>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="0" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="192" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="384" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                </pattern>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="576" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="768" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="960" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="1152" len="192"/>
+                <pattern type="0" muted="0" steps="16" name="Prato (crash)" pos="1344" len="192">
+                  <note len="-192" key="57" vol="100" pos="0" pan="0"/>
+                </pattern>
+              </track>
+          </trackcontainer>
+        </bbtrack>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 2 - Nu Skool Breaks" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 3 - Big Beat" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 4 - Funky Drummer (inspirado)" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 5 - Electro Breaks" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 6 - Half-time Breaks" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 7 - Rolling Breaks" solo="0">
+        <bbtrack/>
+      </track>
+      <track type="1" muted="0" name="Breakbeat 8 - Virada" solo="0">
+        <bbtrack/>
+      </track>
+    </trackcontainer>
+    <mixer visible="1" width="561" height="332" x="10" y="314" maximized="0" minimized="0">
+      <mixerchannel num="0" muted="0" volume="1" name="Master" soloed="0">
+        <fxchain numofeffects="0" enabled="0"/>
+      </mixerchannel>
+    </mixer>
+    <ControllerRackView visible="0" width="258" height="142" x="608" y="307" maximized="0" minimized="0"/>
+    <pianoroll visible="0" width="640" height="480" x="1" y="1" maximized="0" minimized="0"/>
+    <automationeditor visible="0" width="640" height="400" x="56" y="255" maximized="0" minimized="0"/>
+    <projectnotes visible="1" width="640" height="400" x="1" y="1" maximized="0" minimized="0"><![CDATA[<h2>Breakbeat - Batidas</h2>
+<p>Andamento: 130 BPM. Cada padr&atilde;o tem 16 passos (1 compasso). Abra o Editor de Padr&otilde;es e escolha o padr&atilde;o na lista para trocar de batida; clique nos passos para mudar, ou troque a amostra de cada faixa.</p>
+<ul>
+<li><b>Breakbeat 1 - Funky Breaks</b> &mdash; o breakbeat de livro: bumbo no 1, na síncope do 2 e no "e" do 3, caixa no 2 e 4.</li>
+<li><b>Breakbeat 2 - Nu Skool Breaks</b> &mdash; mais denso: caixas fantasmas, chimbal em 16 e abertura no fim do compasso. Pega para breaks de pista.</li>
+<li><b>Breakbeat 3 - Big Beat</b> &mdash; bumbo e caixa pesados com clap empilhado, no estilo Chemical Brothers / Fatboy Slim.</li>
+<li><b>Breakbeat 4 - Funky Drummer (inspirado)</b> &mdash; inspirado no famoso groove do James Brown: bumbos juntos no começo, caixas fantasmas e chimbal em 16.</li>
+<li><b>Breakbeat 5 - Electro Breaks</b> &mdash; bumbos sincopados com clap eletrônico e chimbal em colcheias: o meio do caminho entre breaks e electro.</li>
+<li><b>Breakbeat 6 - Half-time Breaks</b> &mdash; caixa só no meio do compasso: a levada mais lenta e larga dos breaks.</li>
+<li><b>Breakbeat 7 - Rolling Breaks</b> &mdash; bumbo em tresillo (3+3) e chimbal em grupos: levada que "rola" sem parar.</li>
+<li><b>Breakbeat 8 - Virada</b> &mdash; virada de caixas para fechar uma frase de 4 compassos.</li>
+</ul>
+<p>Passos: 1 2 3 4 | 5 6 7 8 | 9 10 11 12 | 13 14 15 16. O bumbo cai nos passos 1, 5, 9, 13 (as batidas).</p>]]></projectnotes>
+    <timeline lp0pos="0" lp1pos="192" lpstate="0"/>
+    <controllers/>
+  </song>
+</lmms-project>

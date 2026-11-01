@@ -29,9 +29,11 @@
 
 #include <QWidget>
 
+#include <map>
 #include <vector>
 
 #include "Editor.h"
+#include "HarmonicField.h"
 #include "ComboBoxModel.h"
 #include "SerializingObject.h"
 #include "Note.h"
@@ -43,6 +45,7 @@
 class QPushButton;
 class QScrollBar;
 class QMenu;
+class QLabel;
 class QToolButton;
 
 namespace lmms
@@ -230,6 +233,8 @@ protected slots:
 	void quantizeChanged();
 	void noteLengthChanged();
 	void keyChanged();
+	void setHarmonicActive(bool active);
+	void harmonicSettingsChanged();
 	void quantizeNotes(QuantizeAction mode = QuantizeAction::Both);
 
 	void updateSemiToneMarkerMenu();
@@ -253,6 +258,7 @@ protected slots:
 signals:
 	void currentMidiClipChanged();
 	void ghostClipSet(bool);
+	void harmonicSummaryChanged(const QString& summary);
 	void semiToneMarkerMenuScaleSetEnabled(bool);
 	void semiToneMarkerMenuChordSetEnabled(bool);
 
@@ -367,6 +373,21 @@ private:
 	ComboBoxModel m_scaleModel;
 	ComboBoxModel m_chordModel;
 	ComboBoxModel m_snapModel;
+
+	// harmonic fields: computer-keyboard rows play the degrees of the chosen key/field
+	bool m_harmonicActive = false;
+	ComboBoxModel m_harmonicModeModel;
+	ComboBoxModel m_harmonicChordModel;
+	ComboBoxModel m_harmonicOctaveModel;
+	std::map<int, std::vector<int>> m_harmonicHeldKeys; //!< keyboard slot -> piano keys currently sounding
+
+	const harmonic::Mode& currentHarmonicMode() const;
+	int harmonicTonic() const;
+	int harmonicBaseKey() const;
+	void harmonicKeyPress(int slot);
+	void harmonicKeyRelease(int slot);
+	void releaseAllHarmonicKeys();
+	void updateHarmonicMarks();
 
 	static const std::vector<float> m_zoomLevels;
 	static const std::vector<float> m_zoomYLevels;
@@ -625,6 +646,12 @@ private:
 	ComboBox * m_scaleComboBox;
 	ComboBox * m_chordComboBox;
 	ComboBox* m_snapComboBox;
+	QToolButton* m_harmonicButton;
+	ComboBox* m_harmonicKeyComboBox;
+	ComboBox* m_harmonicModeComboBox;
+	ComboBox* m_harmonicChordComboBox;
+	ComboBox* m_harmonicOctaveComboBox;
+	QLabel* m_harmonicSummaryLabel;
 	QPushButton * m_clearGhostButton;
 
 };

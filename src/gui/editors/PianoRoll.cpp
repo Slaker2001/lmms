@@ -57,6 +57,7 @@
 #include "DetuningHelper.h"
 #include "embed.h"
 #include "GuiApplication.h"
+#include "HarmonicField.h"
 #include "FontHelper.h"
 #include "InstrumentTrack.h"
 #include "KeyboardShortcuts.h"
@@ -417,6 +418,28 @@ PianoRoll::PianoRoll() :
 	// change can update m_semiToneMarkerMenu
 	connect( &m_chordModel, SIGNAL(dataChanged()),
 					this, SLOT(updateSemiToneMarkerMenu()));
+
+	// Set up the harmonic field models (field/mode, chord size, octave)
+	for (const auto& mode : harmonic::modes())
+	{
+		m_harmonicModeModel.addItem(QString::fromUtf8(harmonic::modeLabel(mode).c_str()));
+	}
+	m_harmonicModeModel.setValue(0); // Major (Ionian)
+	connect(&m_harmonicModeModel, &ComboBoxModel::dataChanged, this, &PianoRoll::harmonicSettingsChanged);
+
+	for (const auto& label : harmonic::chordSizeLabels())
+	{
+		m_harmonicChordModel.addItem(QString::fromUtf8(label.c_str()));
+	}
+	m_harmonicChordModel.setValue(1); // triads
+	connect(&m_harmonicChordModel, &ComboBoxModel::dataChanged, this, &PianoRoll::harmonicSettingsChanged);
+
+	for (int octave = -2; octave <= 2; ++octave)
+	{
+		m_harmonicOctaveModel.addItem(octave > 0 ? QString("+%1").arg(octave) : QString::number(octave));
+	}
+	m_harmonicOctaveModel.setValue(2); // no shift
+	connect(&m_harmonicOctaveModel, &ComboBoxModel::dataChanged, this, &PianoRoll::harmonicSettingsChanged);
 
 	setFocusPolicy( Qt::StrongFocus );
 	setFocus();
@@ -837,6 +860,8 @@ void PianoRoll::loadMarkedSemiTones(const QDomElement & de)
 
 void PianoRoll::setCurrentMidiClip( MidiClip* newMidiClip )
 {
+	releaseAllHarmonicKeys();
+
 	if( hasValidMidiClip() )
 	{
 		m_midiClip->instrumentTrack()->pianoModel()->disconnect(this);
@@ -1317,7 +1342,19 @@ void PianoRoll::keyPressEvent(QKeyEvent* ke)
 		}
 	}
 
-	if( hasValidMidiClip() && ke->modifiers() == Qt::NoModifier )
+	if (hasValidMidiClip() && m_harmonicActive && ke->modifiers() == Qt::NoModifier)
+	{
+		// Harmonic field mode: the keyboard rows play the degrees of the chosen key and field
+		const int slot = PianoView::getHarmonicSlotFromKeyEvent(ke);
+		if (slot > -1)
+		{
+			if (!ke->isAutoRepeat()) { harmonicKeyPress(slot); }
+			ke->accept();
+			return;
+		}
+	}
+
+	if( hasValidMidiClip() && !m_harmonicActive && ke->modifiers() == Qt::NoModifier )
 	{
 		const int key_num = PianoView::getKeyFromKeyEvent( ke );
 
@@ -1555,7 +1592,19 @@ void PianoRoll::keyPressEvent(QKeyEvent* ke)
 
 void PianoRoll::keyReleaseEvent(QKeyEvent* ke )
 {
-	if( hasValidMidiClip() && ke->modifiers() == Qt::NoModifier )
+	if (m_harmonicActive || !m_harmonicHeldKeys.empty())
+	{
+		// Release harmonic keys regardless of modifiers so no note is left hanging
+		const int slot = PianoView::getHarmonicSlotFromKeyEvent(ke);
+		if (slot > -1)
+		{
+			if (!ke->isAutoRepeat()) { harmonicKeyRelease(slot); }
+			ke->accept();
+			return;
+		}
+	}
+
+	if( hasValidMidiClip() && !m_harmonicActive && ke->modifiers() == Qt::NoModifier )
 	{
 		const int key_num = PianoView::getKeyFromKeyEvent( ke );
 		if (!ke->isAutoRepeat() && key_num > -1)
@@ -3648,6 +3697,23 @@ void PianoRoll::paintEvent(QPaintEvent * pe )
 				width() - 10,
 				m_keyLineHeight,
 				m_markedSemitoneColor);
+
+			if (m_harmonicActive && m_keyLineHeight >= 10)
+			{
+				// show the degree (1, 2, 3...) of the field on every highlighted row
+				const int degree = harmonic::degreeOfKey(currentHarmonicMode(), harmonicTonic(), key_num);
+				if (degree >= 0)
+				{
+					p.save();
+					QFont degreeFont = p.font();
+					degreeFont.setPixelSize(qMax(8, m_keyLineHeight - 4));
+					degreeFont.setBold(degree == 0);
+					p.setFont(degreeFont);
+					p.setPen(m_noteModeColor);
+					p.drawText(m_whiteKeyWidth + 6, y + m_keyLineHeight - 3, QString::number(degree + 1));
+					p.restore();
+				}
+			}
 		}
 	}
 
@@ -4228,6 +4294,7 @@ void PianoRoll::wheelEvent(QWheelEvent * we )
 
 void PianoRoll::focusOutEvent( QFocusEvent * )
 {
+	m_harmonicHeldKeys.clear(); // all notes are switched off below
 	if( hasValidMidiClip() )
 	{
 		for( int i = 0; i < NumKeys; ++i )
@@ -4975,7 +5042,135 @@ void PianoRoll::noteLengthChanged()
 
 void PianoRoll::keyChanged()
 {
+	if (m_harmonicActive)
+	{
+		updateHarmonicMarks();
+		return;
+	}
 	markSemiTone(SemiToneMarkerAction::MarkCurrentScale, false);
+}
+
+
+
+const harmonic::Mode& PianoRoll::currentHarmonicMode() const
+{
+	const auto& all = harmonic::modes();
+	const int index = std::clamp(static_cast<int>(m_harmonicModeModel.value()), 0, static_cast<int>(all.size()) - 1);
+	return all[index];
+}
+
+
+
+int PianoRoll::harmonicTonic() const
+{
+	// "No key" (0) behaves like C
+	return std::max(0, static_cast<int>(m_keyModel.value()) - 1);
+}
+
+
+
+int PianoRoll::harmonicBaseKey() const
+{
+	// lowest row starts on the C of the default octave; the octave combo shifts everything
+	return DefaultMiddleKey + (static_cast<int>(m_harmonicOctaveModel.value()) - 2) * KeysPerOctave;
+}
+
+
+
+void PianoRoll::setHarmonicActive(bool active)
+{
+	if (m_harmonicActive == active) { return; }
+
+	if (!active) { releaseAllHarmonicKeys(); }
+	m_harmonicActive = active;
+
+	if (active)
+	{
+		if (m_keyModel.value() == 0) { m_keyModel.setValue(1); } // "No key" -> C
+		updateHarmonicMarks();
+	}
+	else
+	{
+		// back to the normal key/scale highlighting (or none)
+		markSemiTone(SemiToneMarkerAction::MarkCurrentScale, false);
+		emit harmonicSummaryChanged(QString());
+	}
+	update();
+}
+
+
+
+void PianoRoll::harmonicSettingsChanged()
+{
+	if (!m_harmonicActive) { return; }
+	releaseAllHarmonicKeys();
+	updateHarmonicMarks();
+}
+
+
+
+void PianoRoll::updateHarmonicMarks()
+{
+	if (!m_harmonicActive) { return; }
+
+	const harmonic::Mode& mode = currentHarmonicMode();
+	const int tonic = harmonicTonic();
+
+	m_markedSemiTones.clear();
+	for (int key : harmonic::fieldKeys(mode, tonic, NumKeys)) // highest key first, as the painter expects
+	{
+		m_markedSemiTones.append(key);
+	}
+
+	const int noteCount = harmonic::chordNoteCount(m_harmonicChordModel.value());
+	emit harmonicSummaryChanged(QString::fromUtf8(harmonic::fieldSummary(mode, tonic, noteCount).c_str()));
+	update();
+}
+
+
+
+void PianoRoll::harmonicKeyPress(int slot)
+{
+	if (!hasValidMidiClip() || m_harmonicHeldKeys.count(slot)) { return; }
+
+	const int noteCount = harmonic::chordNoteCount(m_harmonicChordModel.value());
+	const std::vector<int> keys = harmonic::keysForSlot(
+		currentHarmonicMode(), harmonicTonic(), harmonicBaseKey(), slot, noteCount, NumKeys);
+	if (keys.empty()) { return; }
+
+	Piano* pianoModel = m_midiClip->instrumentTrack()->pianoModel();
+	for (int key : keys) { pianoModel->handleKeyPress(key); }
+	m_harmonicHeldKeys[slot] = keys;
+}
+
+
+
+void PianoRoll::harmonicKeyRelease(int slot)
+{
+	const auto it = m_harmonicHeldKeys.find(slot);
+	if (it == m_harmonicHeldKeys.end()) { return; }
+
+	if (hasValidMidiClip())
+	{
+		Piano* pianoModel = m_midiClip->instrumentTrack()->pianoModel();
+		for (int key : it->second) { pianoModel->handleKeyRelease(key); }
+	}
+	m_harmonicHeldKeys.erase(it);
+}
+
+
+
+void PianoRoll::releaseAllHarmonicKeys()
+{
+	if (hasValidMidiClip())
+	{
+		Piano* pianoModel = m_midiClip->instrumentTrack()->pianoModel();
+		for (const auto& held : m_harmonicHeldKeys)
+		{
+			for (int key : held.second) { pianoModel->handleKeyRelease(key); }
+		}
+	}
+	m_harmonicHeldKeys.clear();
 }
 
 int PianoRoll::quantization() const
@@ -5467,6 +5662,64 @@ PianoRollWindow::PianoRollWindow() :
 	zoomAndNotesToolBar->addSeparator();
 	zoomAndNotesToolBar->addWidget(snapWidget);
 
+	// -- Harmonic field toolbar (second row: chords of the field)
+	addToolBarBreak();
+	DropToolBar* harmonicToolBar = addDropToolBarToTop(tr("Campo harmônico"));
+
+	m_harmonicButton = new QToolButton(m_toolBar);
+	m_harmonicButton->setText(tr("Campo harmônico"));
+	m_harmonicButton->setCheckable(true);
+	m_harmonicButton->setToolTip(tr(
+		"Campo harmônico: as teclas do computador tocam os graus do tom e do campo escolhidos.\n"
+		"Z X C V B N M = graus 1 a 7\n"
+		"A S D F G H J = mesmos graus, 1 oitava acima\n"
+		"Q W E R T Y U = 2 oitavas acima\n"
+		"1 2 3 4 5 6 7 = 3 oitavas acima\n"
+		"(as teclas , . / K L ; I O P 8 9 0 continuam a sequência)"));
+	connect(m_harmonicButton, &QToolButton::toggled, m_editor, &PianoRoll::setHarmonicActive);
+
+	m_harmonicKeyComboBox = new ComboBox(m_toolBar);
+	m_harmonicKeyComboBox->setModel(&m_editor->m_keyModel);
+	m_harmonicKeyComboBox->setFixedSize(72, ComboBox::DEFAULT_HEIGHT);
+	m_harmonicKeyComboBox->setToolTip(tr("Tom (nota 1 do campo)"));
+
+	m_harmonicModeComboBox = new ComboBox(m_toolBar);
+	m_harmonicModeComboBox->setModel(&m_editor->m_harmonicModeModel);
+	m_harmonicModeComboBox->setFixedSize(330, ComboBox::DEFAULT_HEIGHT);
+	m_harmonicModeComboBox->setToolTip(tr("Campo harmônico (escala ou modo)"));
+
+	m_harmonicChordComboBox = new ComboBox(m_toolBar);
+	m_harmonicChordComboBox->setModel(&m_editor->m_harmonicChordModel);
+	m_harmonicChordComboBox->setFixedSize(190, ComboBox::DEFAULT_HEIGHT);
+	m_harmonicChordComboBox->setToolTip(tr("O que cada tecla toca: só a nota, tríade, tétrade ou pentade"));
+
+	m_harmonicOctaveComboBox = new ComboBox(m_toolBar);
+	m_harmonicOctaveComboBox->setModel(&m_editor->m_harmonicOctaveModel);
+	m_harmonicOctaveComboBox->setFixedSize(56, ComboBox::DEFAULT_HEIGHT);
+	m_harmonicOctaveComboBox->setToolTip(tr("Deslocamento de oitava das teclas"));
+
+	harmonicToolBar->addWidget(m_harmonicButton);
+	harmonicToolBar->addSeparator();
+	harmonicToolBar->addWidget(new QLabel(tr(" Tom: "), m_toolBar));
+	harmonicToolBar->addWidget(m_harmonicKeyComboBox);
+	harmonicToolBar->addWidget(new QLabel(tr(" Campo: "), m_toolBar));
+	harmonicToolBar->addWidget(m_harmonicModeComboBox);
+	harmonicToolBar->addWidget(new QLabel(tr(" Teclas tocam: "), m_toolBar));
+	harmonicToolBar->addWidget(m_harmonicChordComboBox);
+	harmonicToolBar->addWidget(new QLabel(tr(" Oitava: "), m_toolBar));
+	harmonicToolBar->addWidget(m_harmonicOctaveComboBox);
+
+	addToolBarBreak();
+	DropToolBar* harmonicInfoToolBar = addDropToolBarToTop(tr("Acordes do campo harmônico"));
+	m_harmonicSummaryLabel = new QLabel(tr("Ative \"Campo harmônico\" para ver os acordes do campo e tocar com as teclas Z X C V B N M..."), m_toolBar);
+	harmonicInfoToolBar->addWidget(m_harmonicSummaryLabel);
+	connect(m_editor, &PianoRoll::harmonicSummaryChanged, this, [this](const QString& summary)
+	{
+		m_harmonicSummaryLabel->setText(summary.isEmpty()
+			? tr("Ative \"Campo harmônico\" para ver os acordes do campo e tocar com as teclas Z X C V B N M...")
+			: summary);
+	});
+
 	// setup our actual window
 	setFocusPolicy( Qt::StrongFocus );
 	setFocus();
@@ -5633,6 +5886,10 @@ void PianoRollWindow::saveSettings( QDomDocument & doc, QDomElement & de )
 	de.setAttribute("key", m_editor->m_keyModel.value());
 	de.setAttribute("chord", m_editor->m_chordModel.value());
 	de.setAttribute("scale", m_editor->m_scaleModel.value());
+	de.setAttribute("harmonic", m_editor->m_harmonicActive ? 1 : 0);
+	de.setAttribute("hmode", m_editor->m_harmonicModeModel.value());
+	de.setAttribute("hchord", m_editor->m_harmonicChordModel.value());
+	de.setAttribute("hoctave", m_editor->m_harmonicOctaveModel.value());
 
 	MainWindow::saveWidgetState( this, de );
 }
@@ -5653,6 +5910,11 @@ void PianoRollWindow::loadSettings( const QDomElement & de )
 	m_editor->m_chordModel.setInitValue(de.attribute("chord").toInt());
 	m_editor->m_scaleModel.setInitValue(de.attribute("scale").toInt());
 	m_editor->loadMarkedSemiTones(de.firstChildElement("markedSemiTones"));
+
+	if (de.hasAttribute("hmode")) { m_editor->m_harmonicModeModel.setInitValue(de.attribute("hmode").toInt()); }
+	if (de.hasAttribute("hchord")) { m_editor->m_harmonicChordModel.setInitValue(de.attribute("hchord").toInt()); }
+	if (de.hasAttribute("hoctave")) { m_editor->m_harmonicOctaveModel.setInitValue(de.attribute("hoctave").toInt()); }
+	m_harmonicButton->setChecked(de.attribute("harmonic", "0").toInt() != 0);
 
 	// update margins here because we're later in the startup process
 	// We can't earlier because everything is still starting with the

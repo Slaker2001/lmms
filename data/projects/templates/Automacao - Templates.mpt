@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<!DOCTYPE lmms-project>
+<lmms-project type="song" version="1.0" creator="LMMS" creatorversion="1.2.0">
+  <head timesig_denominator="4" bpm="130" masterpitch="0" mastervol="100" timesig_numerator="4"/>
+  <song>
+    <trackcontainer visible="1" width="600" height="300" type="song" x="6" y="5" maximized="0" minimized="0">
+      <track type="0" muted="0" name="Alvo (sintetizador serra)" solo="0">
+        <instrumenttrack pitch="0" mixch="0" pan="0" basenote="57" usemasterpitch="1" pitchrange="1">
+          <vol id="102" value="100" scale_type="linear"/>
+          <instrument name="tripleoscillator">
+            <tripleoscillator finel0="0" vol1="33" finel1="0" coarse0="0" finer0="0" vol2="33" pan0="0" finer1="0" coarse1="0" finel2="0" pan1="0" coarse2="0" finer2="0" pan2="0" wavetype0="2" wavetype1="2" wavetype2="2" phoffset0="0" phoffset1="0" phoffset2="0" modalgo1="2" modalgo2="2" modalgo3="0" stphdetun0="0" stphdetun1="0" stphdetun2="0" userwavefile0="" userwavefile1="" userwavefile2="" vol0="33"/>
+          </instrument>
+          <eldata fwet="1" ftype="0" fres="2">
+            <fcut id="101" value="14000" scale_type="linear"/>
+            <elvol lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+            <elcut lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+            <elres lspd="0.1" ctlenvamt="0" lpdel="0" pdel="0" amt="0" hold="0.5" syncmode="0" userwavefile="" latt="0" sustain="0.5" lamt="0" lshp="0" lspd_denominator="4" lspd_numerator="4" x100="0" rel="0.1" dec="0.5" att="0"/>
+          </eldata>
+          <chordcreator chordrange="1" chord="0" chord-enabled="0"/>
+          <arpeggiator arpdir="0" arpgate="100" arptime_denominator="4" syncmode="0" arp-enabled="0" arprange="1" arptime_numerator="4" arpmode="0" arp="0" arptime="100"/>
+          <midiport inputchannel="0" fixedinputvelocity="-1" outputcontroller="0" outputchannel="1" fixedoutputvelocity="-1" readable="0" fixedoutputnote="-1" outputprogram="1" writable="0" basevelocity="127" inputcontroller="0"/>
+          <fxchain numofeffects="0" enabled="0"/>
+        </instrumenttrack>
+        <pattern type="1" muted="0" steps="16" name="Acorde Am" pos="0" len="6336">
+          <note len="756" key="45" vol="100" pos="0" pan="0"/>
+          <note len="756" key="48" vol="100" pos="0" pan="0"/>
+          <note len="756" key="52" vol="100" pos="0" pan="0"/>
+          <note len="756" key="45" vol="100" pos="768" pan="0"/>
+          <note len="756" key="48" vol="100" pos="768" pan="0"/>
+          <note len="756" key="52" vol="100" pos="768" pan="0"/>
+          <note len="756" key="45" vol="100" pos="1536" pan="0"/>
+          <note len="756" key="48" vol="100" pos="1536" pan="0"/>
+          <note len="756" key="52" vol="100" pos="1536" pan="0"/>
+          <note len="756" key="45" vol="100" pos="2304" pan="0"/>
+          <note len="756" key="48" vol="100" pos="2304" pan="0"/>
+          <note len="756" key="52" vol="100" pos="2304" pan="0"/>
+          <note len="756" key="45" vol="100" pos="3072" pan="0"/>
+          <note len="756" key="48" vol="100" pos="3072" pan="0"/>
+          <note len="756" key="52" vol="100" pos="3072" pan="0"/>
+          <note len="756" key="45" vol="100" pos="3840" pan="0"/>
+          <note len="756" key="48" vol="100" pos="3840" pan="0"/>
+          <note len="756" key="52" vol="100" pos="3840" pan="0"/>
+          <note len="756" key="45" vol="100" pos="4608" pan="0"/>
+          <note len="756" key="48" vol="100" pos="4608" pan="0"/>
+          <note len="756" key="52" vol="100" pos="4608" pan="0"/>
+          <note len="756" key="45" vol="100" pos="5376" pan="0"/>
+          <note len="756" key="48" vol="100" pos="5376" pan="0"/>
+          <note len="756" key="52" vol="100" pos="5376" pan="0"/>
+          <note len="756" key="45" vol="100" pos="6144" pan="0"/>
+          <note len="756" key="48" vol="100" pos="6144" pan="0"/>
+          <note len="756" key="52" vol="100" pos="6144" pan="0"/>
+        </pattern>
+      </track>
+      <track type="6" muted="0" name="Automacao - Filtro (corte)" solo="0">
+        <automationtrack/>
+      <automationpattern len="768" mute="0" name="Corte 1 - Sweep grave para agudo (abre o filtro) 4 compassos" tens="1" pos="0" prog="1" autoresize="0">
+        <time pos="0" value="100.000" outValue="100.000"/>
+        <time pos="48" value="136.186" outValue="136.186"/>
+        <time pos="96" value="185.467" outValue="185.467"/>
+        <time pos="144" value="252.580" outValue="252.580"/>
+        <time pos="192" value="343.979" outValue="343.979"/>
+        <time pos="240" value="468.452" outValue="468.452"/>
+        <time pos="288" value="637.967" outValue="637.967"/>
+        <time pos="336" value="868.822" outValue="868.822"/>
+        <time pos="384" value="1183.216" outValue="1183.216"/>
+        <time pos="432" value="1611.376" outValue="1611.376"/>
+        <time pos="480" value="2194.472" outValue="2194.472"/>
+        <time pos="528" value="2988.567" outValue="2988.567"/>
+        <time pos="576" value="4070.015" outValue="4070.015"/>
+        <time pos="624" value="5542.798" outValue="5542.798"/>
+        <time pos="672" value="7548.524" outValue="7548.524"/>
+        <time pos="720" value="10280.045" outValue="10280.045"/>
+        <time pos="768" value="14000.000" outValue="14000.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Corte 2 - Sweep agudo para grave (fecha o filtro) 4 compassos" tens="1" pos="768" prog="1" autoresize="0">
+        <time pos="0" value="14000.000" outValue="14000.000"/>
+        <time pos="48" value="10280.045" outValue="10280.045"/>
+        <time pos="96" value="7548.524" outValue="7548.524"/>
+        <time pos="144" value="5542.798" outValue="5542.798"/>
+        <time pos="192" value="4070.015" outValue="4070.015"/>
+        <time pos="240" value="2988.567" outValue="2988.567"/>
+        <time pos="288" value="2194.472" outValue="2194.472"/>
+        <time pos="336" value="1611.376" outValue="1611.376"/>
+        <time pos="384" value="1183.216" outValue="1183.216"/>
+        <time pos="432" value="868.822" outValue="868.822"/>
+        <time pos="480" value="637.967" outValue="637.967"/>
+        <time pos="528" value="468.452" outValue="468.452"/>
+        <time pos="576" value="343.979" outValue="343.979"/>
+        <time pos="624" value="252.580" outValue="252.580"/>
+        <time pos="672" value="185.467" outValue="185.467"/>
+        <time pos="720" value="136.186" outValue="136.186"/>
+        <time pos="768" value="100.000" outValue="100.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Corte 3 - Sobe e desce (triangular) 4 compassos" tens="1" pos="1536" prog="1" autoresize="0">
+        <time pos="0" value="100.000" outValue="100.000"/>
+        <time pos="48" value="185.467" outValue="185.467"/>
+        <time pos="96" value="343.979" outValue="343.979"/>
+        <time pos="144" value="637.967" outValue="637.967"/>
+        <time pos="192" value="1183.216" outValue="1183.216"/>
+        <time pos="240" value="2194.472" outValue="2194.472"/>
+        <time pos="288" value="4070.015" outValue="4070.015"/>
+        <time pos="336" value="7548.524" outValue="7548.524"/>
+        <time pos="384" value="14000.000" outValue="14000.000"/>
+        <time pos="432" value="7548.524" outValue="7548.524"/>
+        <time pos="480" value="4070.015" outValue="4070.015"/>
+        <time pos="528" value="2194.472" outValue="2194.472"/>
+        <time pos="576" value="1183.216" outValue="1183.216"/>
+        <time pos="624" value="637.967" outValue="637.967"/>
+        <time pos="672" value="343.979" outValue="343.979"/>
+        <time pos="720" value="185.467" outValue="185.467"/>
+        <time pos="768" value="100.000" outValue="100.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="1536" mute="0" name="Corte 4 - Sweep longo 8 compassos (build-up)" tens="1" pos="2304" prog="1" autoresize="0">
+        <time pos="0" value="200.000" outValue="200.000"/>
+        <time pos="48" value="228.396" outValue="228.396"/>
+        <time pos="96" value="260.825" outValue="260.825"/>
+        <time pos="144" value="297.857" outValue="297.857"/>
+        <time pos="192" value="340.147" outValue="340.147"/>
+        <time pos="240" value="388.442" outValue="388.442"/>
+        <time pos="288" value="443.594" outValue="443.594"/>
+        <time pos="336" value="506.577" outValue="506.577"/>
+        <time pos="384" value="578.502" outValue="578.502"/>
+        <time pos="432" value="660.638" outValue="660.638"/>
+        <time pos="480" value="754.437" outValue="754.437"/>
+        <time pos="528" value="861.554" outValue="861.554"/>
+        <time pos="576" value="983.879" outValue="983.879"/>
+        <time pos="624" value="1123.572" outValue="1123.572"/>
+        <time pos="672" value="1283.100" outValue="1283.100"/>
+        <time pos="720" value="1465.277" outValue="1465.277"/>
+        <time pos="768" value="1673.320" outValue="1673.320"/>
+        <time pos="816" value="1910.902" outValue="1910.902"/>
+        <time pos="864" value="2182.216" outValue="2182.216"/>
+        <time pos="912" value="2492.051" outValue="2492.051"/>
+        <time pos="960" value="2845.878" outValue="2845.878"/>
+        <time pos="1008" value="3249.942" outValue="3249.942"/>
+        <time pos="1056" value="3711.376" outValue="3711.376"/>
+        <time pos="1104" value="4238.325" outValue="4238.325"/>
+        <time pos="1152" value="4840.091" outValue="4840.091"/>
+        <time pos="1200" value="5527.297" outValue="5527.297"/>
+        <time pos="1248" value="6312.075" outValue="6312.075"/>
+        <time pos="1296" value="7208.277" outValue="7208.277"/>
+        <time pos="1344" value="8231.724" outValue="8231.724"/>
+        <time pos="1392" value="9400.481" outValue="9400.481"/>
+        <time pos="1440" value="10735.182" outValue="10735.182"/>
+        <time pos="1488" value="12259.386" outValue="12259.386"/>
+        <time pos="1536" value="14000.000" outValue="14000.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Corte 5 - Serra: abre a cada compasso 4 compassos" tens="1" pos="3840" prog="1" autoresize="0">
+        <time pos="0" value="300.000" outValue="300.000"/>
+        <time pos="24" value="485.006" outValue="485.006"/>
+        <time pos="48" value="784.103" outValue="784.103"/>
+        <time pos="72" value="1267.648" outValue="1267.648"/>
+        <time pos="96" value="2049.390" outValue="2049.390"/>
+        <time pos="120" value="3313.222" outValue="3313.222"/>
+        <time pos="144" value="5356.441" outValue="5356.441"/>
+        <time pos="168" value="8659.687" outValue="8659.687"/>
+        <time pos="191" value="14000.000" outValue="14000.000"/>
+        <time pos="192" value="300.000" outValue="300.000"/>
+        <time pos="216" value="485.006" outValue="485.006"/>
+        <time pos="240" value="784.103" outValue="784.103"/>
+        <time pos="264" value="1267.648" outValue="1267.648"/>
+        <time pos="288" value="2049.390" outValue="2049.390"/>
+        <time pos="312" value="3313.222" outValue="3313.222"/>
+        <time pos="336" value="5356.441" outValue="5356.441"/>
+        <time pos="360" value="8659.687" outValue="8659.687"/>
+        <time pos="383" value="14000.000" outValue="14000.000"/>
+        <time pos="384" value="300.000" outValue="300.000"/>
+        <time pos="408" value="485.006" outValue="485.006"/>
+        <time pos="432" value="784.103" outValue="784.103"/>
+        <time pos="456" value="1267.648" outValue="1267.648"/>
+        <time pos="480" value="2049.390" outValue="2049.390"/>
+        <time pos="504" value="3313.222" outValue="3313.222"/>
+        <time pos="528" value="5356.441" outValue="5356.441"/>
+        <time pos="552" value="8659.687" outValue="8659.687"/>
+        <time pos="575" value="14000.000" outValue="14000.000"/>
+        <time pos="576" value="300.000" outValue="300.000"/>
+        <time pos="600" value="485.006" outValue="485.006"/>
+        <time pos="624" value="784.103" outValue="784.103"/>
+        <time pos="648" value="1267.648" outValue="1267.648"/>
+        <time pos="672" value="2049.390" outValue="2049.390"/>
+        <time pos="696" value="3313.222" outValue="3313.222"/>
+        <time pos="720" value="5356.441" outValue="5356.441"/>
+        <time pos="744" value="8659.687" outValue="8659.687"/>
+        <time pos="767" value="14000.000" outValue="14000.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Corte 6 - Escada ascendente (degraus) 4 compassos" tens="1" pos="4608" prog="0" autoresize="0">
+        <time pos="0" value="300.000" outValue="300.000"/>
+        <time pos="96" value="487.684" outValue="487.684"/>
+        <time pos="192" value="792.786" outValue="792.786"/>
+        <time pos="288" value="1288.763" outValue="1288.763"/>
+        <time pos="384" value="2095.031" outValue="2095.031"/>
+        <time pos="480" value="3405.712" outValue="3405.712"/>
+        <time pos="576" value="5536.371" outValue="5536.371"/>
+        <time pos="672" value="9000.000" outValue="9000.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Corte 7 - Onda senoidal lenta (LFO) 4 compassos" tens="1" pos="5376" prog="2" autoresize="0">
+        <time pos="0" value="4000.000" outValue="4000.000"/>
+        <time pos="48" value="7200.000" outValue="7200.000"/>
+        <time pos="96" value="4000.000" outValue="4000.000"/>
+        <time pos="144" value="800.000" outValue="800.000"/>
+        <time pos="192" value="4000.000" outValue="4000.000"/>
+        <time pos="240" value="7200.000" outValue="7200.000"/>
+        <time pos="288" value="4000.000" outValue="4000.000"/>
+        <time pos="336" value="800.000" outValue="800.000"/>
+        <time pos="384" value="4000.000" outValue="4000.000"/>
+        <time pos="432" value="7200.000" outValue="7200.000"/>
+        <time pos="480" value="4000.000" outValue="4000.000"/>
+        <time pos="528" value="800.000" outValue="800.000"/>
+        <time pos="576" value="4000.000" outValue="4000.000"/>
+        <time pos="624" value="7200.000" outValue="7200.000"/>
+        <time pos="672" value="4000.000" outValue="4000.000"/>
+        <time pos="720" value="800.000" outValue="800.000"/>
+        <time pos="768" value="4000.000" outValue="4000.000"/>
+        <object id="101"/>
+      </automationpattern>
+      <automationpattern len="192" mute="0" name="Corte 8 - Queda rapida 1 compasso (transicao)" tens="1" pos="6144" prog="1" autoresize="0">
+        <time pos="0" value="14000.000" outValue="14000.000"/>
+        <time pos="24" value="7940.968" outValue="7940.968"/>
+        <time pos="48" value="4504.212" outValue="4504.212"/>
+        <time pos="72" value="2554.843" outValue="2554.843"/>
+        <time pos="96" value="1449.138" outValue="1449.138"/>
+        <time pos="120" value="821.968" outValue="821.968"/>
+        <time pos="144" value="466.230" outValue="466.230"/>
+        <time pos="168" value="264.451" outValue="264.451"/>
+        <time pos="192" value="150.000" outValue="150.000"/>
+        <object id="101"/>
+      </automationpattern>
+      </track>
+      <track type="6" muted="0" name="Automacao - Volume" solo="0">
+        <automationtrack/>
+      <automationpattern len="768" mute="0" name="Volume 1 - Fade in 4 compassos" tens="1" pos="0" prog="1" autoresize="0">
+        <time pos="0" value="0.000" outValue="0.000"/>
+        <time pos="768" value="100.000" outValue="100.000"/>
+        <object id="102"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Volume 2 - Fade out 4 compassos" tens="1" pos="768" prog="1" autoresize="0">
+        <time pos="0" value="100.000" outValue="100.000"/>
+        <time pos="768" value="0.000" outValue="0.000"/>
+        <object id="102"/>
+      </automationpattern>
+      <automationpattern len="768" mute="0" name="Volume 3 - Sidechain falso (pumping) 4 compassos" tens="1" pos="1536" prog="1" autoresize="0">
+        <time pos="0" value="15.000" outValue="15.000"/>
+        <time pos="36" value="100.000" outValue="100.000"/>
+        <time pos="48" value="15.000" outValue="15.000"/>
+        <time pos="84" value="100.000" outValue="100.000"/>
+        <time pos="96" value="15.000" outValue="15.000"/>
+        <time pos="132" value="100.000" outValue="100.000"/>
+        <time pos="144" value="15.000" outValue="15.000"/>
+        <time pos="180" value="100.000" outValue="100.000"/>
+        <time pos="192" value="15.000" outValue="15.000"/>
+        <time pos="228" value="100.000" outValue="100.000"/>
+        <time pos="240" value="15.000" outValue="15.000"/>
+        <time pos="276" value="100.000" outValue="100.000"/>
+        <time pos="288" value="15.000" outValue="15.000"/>
+        <time pos="324" value="100.000" outValue="100.000"/>
+        <time pos="336" value="15.000" outValue="15.000"/>
+        <time pos="372" value="100.000" outValue="100.000"/>
+        <time pos="384" value="15.000" outValue="15.000"/>
+        <time pos="420" value="100.000" outValue="100.000"/>
+        <time pos="432" value="15.000" outValue="15.000"/>
+        <time pos="468" value="100.000" outValue="100.000"/>
+        <time pos="480" value="15.000" outValue="15.000"/>
+        <time pos="516" value="100.000" outValue="100.000"/>
+        <time pos="528" value="15.000" outValue="15.000"/>
+        <time pos="564" value="100.000" outValue="100.000"/>
+        <time pos="576" value="15.000" outValue="15.000"/>
+        <time pos="612" value="100.000" outValue="100.000"/>
+        <time pos="624" value="15.000" outValue="15.000"/>
+        <time pos="660" value="100.000" outValue="100.000"/>
+        <time pos="672" value="15.000" outValue="15.000"/>
+        <time pos="708" value="100.000" outValue="100.000"/>
+        <time pos="720" value="15.000" outValue="15.000"/>
+        <time pos="756" value="100.000" outValue="100.000"/>
+        <object id="102"/>
+      </automationpattern>
+      <automationpattern len="192" mute="0" name="Volume 4 - Trance gate 1 compasso" tens="1" pos="2304" prog="0" autoresize="0">
+        <time pos="0" value="100.000" outValue="100.000"/>
+        <time pos="24" value="0.000" outValue="0.000"/>
+        <time pos="48" value="100.000" outValue="100.000"/>
+        <time pos="72" value="0.000" outValue="0.000"/>
+        <time pos="96" value="100.000" outValue="100.000"/>
+        <time pos="120" value="0.000" outValue="0.000"/>
+        <time pos="144" value="100.000" outValue="100.000"/>
+        <time pos="168" value="0.000" outValue="0.000"/>
+        <object id="102"/>
+      </automationpattern>
+      </track>
+    </trackcontainer>
+    <mixer visible="0" width="561" height="332" x="10" y="314" maximized="0" minimized="0">
+      <mixerchannel num="0" muted="0" volume="1" name="Master" soloed="0">
+        <fxchain numofeffects="0" enabled="0"/>
+      </mixerchannel>
+    </mixer>
+    <ControllerRackView visible="0" width="258" height="142" x="608" y="307" maximized="0" minimized="0"/>
+    <pianoroll visible="0" width="640" height="480" x="1" y="1" maximized="0" minimized="0"/>
+    <automationeditor visible="0" width="640" height="400" x="56" y="255" maximized="0" minimized="0"/>
+    <projectnotes visible="1" width="640" height="400" x="1" y="1" maximized="0" minimized="0"><![CDATA[<h2>Automa&ccedil;&atilde;o - Templates</h2>
+<p>As faixas <b>Automa&ccedil;&atilde;o - Filtro (corte)</b> e <b>Automa&ccedil;&atilde;o - Volume</b> j&aacute; est&atilde;o ligadas ao sintetizador de demonstra&ccedil;&atilde;o. Toque o projeto para ouvir cada curva; clique duas vezes em um clipe para ver a forma no Editor de Automa&ccedil;&atilde;o.</p><p><b>Para usar em outro projeto:</b> copie o clipe (Ctrl+C), cole na faixa de automa&ccedil;&atilde;o do seu projeto (Ctrl+V) e arraste o controle desejado (por exemplo, o bot&atilde;o de corte do filtro) para cima do clipe segurando Ctrl. Os valores do filtro est&atilde;o em Hz (de 100 a 14000) e os de volume em % (0 a 100).</p>
+<h3>Filtro (corte)</h3><ul>
+<li><b>Corte 1 - Sweep grave para agudo (abre o filtro) 4 compassos</b> &mdash; o filtro abre devagar: o som vai do abafado (grave) ao brilhante (agudo). Clássico de build-up de trance e house.</li>
+<li><b>Corte 2 - Sweep agudo para grave (fecha o filtro) 4 compassos</b> &mdash; o contrário: o som vai ficando abafado. Use para sair de um drop ou entrar num breakdown.</li>
+<li><b>Corte 3 - Sobe e desce (triangular) 4 compassos</b> &mdash; abre durante 2 compassos e fecha nos 2 seguintes, em curva simétrica.</li>
+<li><b>Corte 4 - Sweep longo 8 compassos (build-up)</b> &mdash; abertura lenta de 8 compassos, para construir tensão antes do drop.</li>
+<li><b>Corte 5 - Serra: abre a cada compasso 4 compassos</b> &mdash; o filtro abre e volta a fechar de repente a cada compasso: efeito de "pulso" muito usado em techno e trance.</li>
+<li><b>Corte 6 - Escada ascendente (degraus) 4 compassos</b> &mdash; o filtro sobe em degraus, 2 por compasso (modo discreto, sem rampa).</li>
+<li><b>Corte 7 - Onda senoidal lenta (LFO) 4 compassos</b> &mdash; o filtro oscila suavemente, 1 ciclo por compasso (curva suave): "wobble" lento.</li>
+<li><b>Corte 8 - Queda rapida 1 compasso (transicao)</b> &mdash; fecha o filtro em 1 compasso só: ótimo para cortar de uma seção para a próxima.</li>
+</ul><h3>Volume</h3><ul>
+<li><b>Volume 1 - Fade in 4 compassos</b> &mdash; o som entra do silêncio até o volume normal.</li>
+<li><b>Volume 2 - Fade out 4 compassos</b> &mdash; o som some aos poucos, para terminar uma faixa.</li>
+<li><b>Volume 3 - Sidechain falso (pumping) 4 compassos</b> &mdash; o volume "afunda" a cada batida do bumbo e volta: o efeito de bombeamento do house/trance, sem precisar de compressor.</li>
+<li><b>Volume 4 - Trance gate 1 compasso</b> &mdash; liga e desliga o som em colcheias (modo discreto): o "gate" rítmico de trance. Duplique para mais compassos.</li>
+</ul>]]></projectnotes>
+    <timeline lp0pos="0" lp1pos="6336" lpstate="0"/>
+    <controllers/>
+  </song>
+</lmms-project>

@@ -46,6 +46,7 @@
 
 #include "AutomatableModelView.h"
 #include "DeprecationHelper.h"
+#include "HarmonicField.h"
 #include "PianoView.h"
 #include "Piano.h"
 #include "CaptionMenu.h"
@@ -267,6 +268,61 @@ int PianoView::getKeyFromKeyEvent( QKeyEvent * ke )
 {
 	const auto key = static_cast<Key>(getKeyOffsetFromKeyEvent(ke));
 	return DefaultOctave + key - KeysPerOctave;
+}
+
+/*! \brief Map a keyboard key to a slot of the harmonic-field layout
+ *
+ *  The layout has four rows of ten physical keys (scan codes, so it does not
+ *  depend on the keyboard language):
+ *    row 0:  Z X C V B N M , . /
+ *    row 1:  A S D F G H J K L ;
+ *    row 2:  Q W E R T Y U I O P
+ *    row 3:  1 2 3 4 5 6 7 8 9 0
+ *  The slot number is row * 10 + column.
+ */
+int PianoView::getHarmonicSlotFromKeyEvent( QKeyEvent * ke )
+{
+	constexpr int rows = harmonic::KeyboardRows;
+	constexpr int cols = harmonic::KeyboardColumns;
+
+#ifdef LMMS_BUILD_APPLE
+	const int k = ke->nativeVirtualKey();
+	static const int layout[rows][cols] =
+	{
+		{ 6, 7, 8, 9, 11, 45, 46, 43, 47, 44 },
+		{ 0, 1, 2, 3, 5, 4, 38, 40, 37, 41 },
+		{ 12, 13, 14, 15, 17, 16, 32, 34, 31, 35 },
+		{ 18, 19, 20, 21, 23, 22, 26, 28, 25, 29 }
+	};
+#elif defined(LMMS_BUILD_WIN32)
+	const int k = ke->nativeScanCode();
+	static const int layout[rows][cols] =
+	{
+		{ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 },
+		{ 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 },
+		{ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 },
+		{ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }
+	};
+#else
+	// X11 / evdev scan codes (the same ones the standard piano mapping above uses)
+	const int k = ke->nativeScanCode();
+	static const int layout[rows][cols] =
+	{
+		{ 52, 53, 54, 55, 56, 57, 58, 59, 60, 61 },
+		{ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47 },
+		{ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 },
+		{ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }
+	};
+#endif
+
+	for (int r = 0; r < rows; ++r)
+	{
+		for (int c = 0; c < cols; ++c)
+		{
+			if (layout[r][c] == k) { return r * cols + c; }
+		}
+	}
+	return -1;
 }
 
 /*! \brief Register a change to this piano display view

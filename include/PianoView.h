@@ -49,6 +49,10 @@ public:
 
 	static int getKeyFromKeyEvent( QKeyEvent * _ke );
 
+	//! Physical keyboard slot (row * 10 + column) of a key event for the harmonic-field
+	//! layout (rows: Z.. / A.. / Q.. / 1..), or -1 if the key is not part of that layout.
+	static int getHarmonicSlotFromKeyEvent( QKeyEvent * _ke );
+
 
 public:
 	void keyPressEvent( QKeyEvent * ke ) override;
